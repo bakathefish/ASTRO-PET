@@ -23,31 +23,31 @@ a clear sky would be a direct line of sight to space which would be cold and the
  
 | Qty | Description | Manufacturer | MPN | Supplier | Part No. | Unit (USD) | Total (USD) |
 |-----|-------------|--------------|-----|----------|----------|------------|-------------|
-| 2 | ESP32-S3-MINI-1-N4R2 module | Espressif | ESP32-S3-MINI-1-N4R2 | LCSC | C3013941 | $5.15 | $10.31 |
-| 2 | RES 4.3kΩ 0603 | FOJAN | FRC0603F4301TS | LCSC | C2930099 | $0.002 | $0.003 |
-| 7 | CAP 100nF 0603 | YAGEO | CC0603KRX7R9BB104 | LCSC | C14663 | $0.03 | $0.18 |
-| 4 | CAP 47µF 0805 | HRE | CGA0805X5R476M100MT | LCSC | C6119904 | $0.13 | $0.53 |
-| 6 | RES 10kΩ 0603 | FOJAN | FRC0603J103TS | LCSC | C2930027 | $0.001 | $0.008 |
-| 4 | Tactile button | XUNPU | TS-1088-AR02016 | LCSC | C720477 | $0.054 | $0.22 |
-| 1 | GPS connector JST 4-pin | JST | B4B-PH-K-S(LF)(SN) | LCSC | C131334 | $0.047 | $0.047 |
-| 1 | BME280 temp/humidity/pressure | Bosch | BME280 | LCSC | C92489 | $6.37 | $6.37 |
-| 1 | MLX90614ESF-BAA IR cloud sensor | Melexis | MLX90614ESF-BAA-000-TU | LCSC | C490604 | $6.56 | $6.56 |
-| 1 | TSL25911FN sky brightness sensor | AMS | TSL25911FN | LCSC | C176812 | $3.22 | $3.22 |
-| 2 | LED indicator | Kingbright | APHHS1005LSECK/J3-PF | LCSC | C5354976 | $0.49 | $0.97 |
-| 2 | CAP 22µF | Samsung | CL21A226MQQNNNE | LCSC | C5674 | $0.039 | $0.078 |
-| 2 | LDO 3.3V AP2112K | Diodes Inc. | AP2112K-3.3TRG1 | LCSC | C51118 | $0.163 | $0.327 |
-| 2 | CAP 10µF | Samsung | CL21A106KAYNNNE | LCSC | C15850 | $0.048 | $0.095 |
-| 4 | RES 22Ω 0603 | UNI-ROYAL | 0603WAF220JT5E | LCSC | C23345 | $0.002 | $0.006 |
-| 2 | ESD diode USBLC6-2SC6 | ST | USBLC6-2SC6 | LCSC | C7519 | $0.154 | $0.308 |
-| 2 | Schottky diode MBR0520 | TWGMC | MBR0520 | LCSC | C5204745 | $0.021 | $0.042 |
-| 2 | Ferrite bead BLM18PG121SN1D | muRata | BLM18PG121SN1D | LCSC | C14709 | $0.017 | $0.034 |
-| 2 | PTC resettable fuse 75mA | Jinrui | JK-nSMD075/6V | LCSC | C2830242 | $0.039 | $0.077 |
-| 4 | RES 5.1kΩ 0603 | FOJAN | FRC0603F5101TS | LCSC | C2907044 | $0.002 | $0.006 |
-| 1 | Display header 1x7 2.54mm | Hanxia | HX PM2.54-1x7P ZC-Y | LCSC | C22438157 | $0.12 | $0.12 |
-| 1 | NEO-6M GPS module | — | — | Robu.in | 1270231 | $3.00 | $3.00 |
-| 1 | GC9A01 1.28" round IPS display | — | — | Robu.in | R123209 | $4.00 | $4.00 |
-| 2 | 2-layer PCB | — | — | JLCPCB | — | $2.10 | $4.20 |
- 
+| 2 | [ESP32-S3-MINI-1-N4R2 module](https://www.lcsc.com/product-detail/C3013941.html?s_z=n_q_C3013941&globalKeyword=C3013941) | Espressif | ESP32-S3-MINI-1-N4R2 | LCSC | C3013941 | $5.15 | $10.31 |
+| 2 | [RES 4.3kΩ 0603](https://www.lcsc.com/product-detail/C2930099.html?s_z=n_q_C2930099&globalKeyword=C2930099) | FOJAN | FRC0603F4301TS | LCSC | C2930099 | $0.002 | $0.003 |
+| 7 | [CAP 100nF 0603](https://www.lcsc.com/product-detail/C14663.html?s_z=n_q_C14663&globalKeyword=C14663) | YAGEO | CC0603KRX7R9BB104 | LCSC | C14663 | $0.03 | $0.18 |
+| 4 | [CAP 47µF 0805](https://www.lcsc.com/product-detail/C6119904.html?s_z=n_q_C6119904&globalKeyword=C6119904) | HRE | CGA0805X5R476M100MT | LCSC | C6119904 | $0.13 | $0.53 |
+| 6 | [RES 10kΩ 0603](https://www.lcsc.com/product-detail/C2930027.html?s_z=n_q_C2930027&globalKeyword=C2930027) | FOJAN | FRC0603J103TS | LCSC | C2930027 | $0.001 | $0.008 |
+| 4 | [Tactile button](https://www.lcsc.com/product-detail/C720477.html?s_z=n_q_C720477&globalKeyword=C720477) | XUNPU | TS-1088-AR02016 | LCSC | C720477 | $0.054 | $0.22 |
+| 1 | [GPS connector JST 4-pin](https://www.lcsc.com/product-detail/C131334.html?s_z=n_q_C131334&globalKeyword=C131334) | JST | B4B-PH-K-S(LF)(SN) | LCSC | C131334 | $0.047 | $0.047 |
+| 1 | [BME280 temp/humidity/pressure](https://www.lcsc.com/product-detail/C92489.html?s_z=n_q_C92489&globalKeyword=C92489) | Bosch | BME280 | LCSC | C92489 | $6.37 | $6.37 |
+| 1 | [MLX90614ESF-BAA IR cloud sensor](https://www.lcsc.com/product-detail/C490604.html?s_z=n_q_C490604&globalKeyword=C490604) | Melexis | MLX90614ESF-BAA-000-TU | LCSC | C490604 | $6.56 | $6.56 |
+| 1 | [TSL25911FN sky brightness sensor](https://www.lcsc.com/product-detail/C176812.html?s_z=n_q_C176812&globalKeyword=C176812) | AMS | TSL25911FN | LCSC | C176812 | $3.22 | $3.22 |
+| 2 | [LED indicator](https://www.lcsc.com/product-detail/C5354976.html?s_z=n_q_C5354976&globalKeyword=C5354976) | Kingbright | APHHS1005LSECK/J3-PF | LCSC | C5354976 | $0.49 | $0.97 |
+| 2 | [CAP 22µF](https://www.lcsc.com/product-detail/C5674.html?s_z=n_q_C5674&globalKeyword=C5674) | Samsung | CL21A226MQQNNNE | LCSC | C5674 | $0.039 | $0.078 |
+| 2 | [LDO 3.3V AP2112K](https://www.lcsc.com/product-detail/C51118.html?s_z=n_q_C51118&globalKeyword=C51118) | Diodes Inc. | AP2112K-3.3TRG1 | LCSC | C51118 | $0.163 | $0.327 |
+| 2 | [CAP 10µF](https://www.lcsc.com/product-detail/C15850.html?s_z=n_q_C15850&globalKeyword=C15850) | Samsung | CL21A106KAYNNNE | LCSC | C15850 | $0.048 | $0.095 |
+| 4 | [RES 22Ω 0603](https://www.lcsc.com/product-detail/C23345.html?s_z=n_q_C23345&globalKeyword=C23345) | UNI-ROYAL | 0603WAF220JT5E | LCSC | C23345 | $0.002 | $0.006 |
+| 2 | [ESD diode USBLC6-2SC6](https://www.lcsc.com/product-detail/C7519.html?s_z=n_q_C7519&globalKeyword=C7519) | ST | USBLC6-2SC6 | LCSC | C7519 | $0.154 | $0.308 |
+| 2 | [Schottky diode MBR0520](https://www.lcsc.com/product-detail/C5204745.html?s_z=n_q_C5204745&globalKeyword=C5204745) | TWGMC | MBR0520 | LCSC | C5204745 | $0.021 | $0.042 |
+| 2 | [Ferrite bead BLM18PG121SN1D](https://www.lcsc.com/product-detail/C14709.html?s_z=n_q_C14709&globalKeyword=C14709) | muRata | BLM18PG121SN1D | LCSC | C14709 | $0.017 | $0.034 |
+| 2 | [PTC resettable fuse 75mA](https://www.lcsc.com/product-detail/C2830242.html?s_z=n_q_C2830242&globalKeyword=C2830242) | Jinrui | JK-nSMD075/6V | LCSC | C2830242 | $0.039 | $0.077 |
+| 4 | [RES 5.1kΩ 0603](https://www.lcsc.com/product-detail/C2907044.html?s_z=n_q_C2907044&globalKeyword=C2907044) | FOJAN | FRC0603F5101TS | LCSC | C2907044 | $0.002 | $0.006 |
+| 1 | [Display header 1x7 2.54mm](https://www.lcsc.com/product-detail/C22438157.html?s_z=n_q_C22438157&globalKeyword=C22438157) | Hanxia | HX PM2.54-1x7P ZC-Y | LCSC | C22438157 | $0.12 | $0.12 |
+| 1 | [NEO-6M GPS module](https://robu.in/product/neo-6m-gps-module-with-eprom-normal-quality/) | — | — | Robu.in | 1270231 | $3.00 | $3.00 |
+| 1 | [GC9A01 1.28" round IPS display](https://robu.in/product/goldenmorning-gc9a01-7p-240x240-spi-1-28-inch-round-display-module/?gad_source=1&gad_campaignid=17416544847) | — | — | Robu.in | R123209 | $4.00 | $4.00 |
+| 2 | [2-layer PCB](https://cart.jlcpcb.com/quote?spm=jlcpcb.Public.2006) | — | — | JLCPCB | — | $2.10 | $4.20 |
+
 **Total: ~$40.50 USD**
 
 ## PCB 1- Sensor Unit Schematic
