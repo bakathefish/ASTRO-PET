@@ -1,4 +1,6 @@
-<img width="1000" height="1421" alt="image" src="https://github.com/user-attachments/assets/be00f532-b3fc-4bd3-be0e-3153034bed0b" />
+<img width="1410" height="2000" alt="Copy of ASTRO PET (1)" src="https://github.com/user-attachments/assets/fd420cd7-53b0-4618-81a4-5620f0effd8c" />
+
+# AstroPet
 
 ## What is it?
  
@@ -8,17 +10,55 @@ The pet's mood tells you whether it's worth going outside to shoot tonight. A ha
 
 ## Why did i make it?
 
-Everytime i want to go outside and shoot theres always the laziness preventing me im always thinking what if its too bright what if theres too many clouds is the humidity right is it time to go shoot yet or do i wait more by the time iv figured it out all the motivation to shoot has faded or the time to shoot has so i figured if i have a small device pet telling me exactly what to do and if its a good idea to shoot without me ever leaving the comfort of my bed its perfect i wanted something that would work anywhere regardless of if i had wifi right now im only doing the most basic things with the sensors however overtime i plan to improve a lot on the design and firmware since this is just a v1 build of it overtime i plan on adding more moods maybe optional wifi modes that also pull planetary data and moon phase and perhaps tell you what to shoot or an ideal setup to use 
+Everytime i want to go outside and shoot theres always the laziness preventing me. im always thinking what if its too bright, what if theres too many clouds, is the humidity right, is it time to go shoot yet or do i wait more. by the time iv figured it out all the motivation to shoot has faded, or the time to shoot has. so i figured if i have a small device pet telling me exactly what to do and if its a good idea to shoot, without me ever leaving the comfort of my bed, its perfect. i wanted something that would work anywhere regardless of if i had wifi.
+
+right now im only doing the most basic things with the sensors, however overtime i plan to improve a lot on the design and firmware since this is just a v1 build of it. overtime i plan on adding more moods, maybe optional wifi modes that also pull planetary data and moon phase, and perhaps tell you what to shoot or an ideal setup to use.
 
 ## how does it work
 
-the two boards talk to eachother wirelessly over the esp32s esp now protocol a direct device to device protocol that needs no router no hotspot or internet connection
+the two boards talk to eachother wirelessly over the esp32s esp now protocol, a direct device to device protocol that needs no router, no hotspot, or internet connection.
 
-**board one** the sensor unit- it sits outside reading the data the sensors fire every 5 seconds and the data is then transmitted over to board 2
-**board two** the display unit, it sits on your desk receives the packets runs three checks on the data and outputs a face to match all of it 
+**board one** the sensor unit, it sits outside reading the data, the sensors fire every 5 seconds and the data is then transmitted over to board 2.
+**board two** the display unit, it sits on your desk, receives the packets, runs three checks on the data and outputs a face to match all of it.
 
 ## Why the ir temperature finds clouds
-a clear sky would be a direct line of sight to space which would be cold and the mlx90614 pointed upward would read that cold radiation and return a very very low temperature however if it was pointed at a cloud the temperature would be much higher and when we compare this with the surrounding temperature taken by the other sensor it allows us to predict if clouds are blocking the sky or not without using any internet forecast data or camera since those will be unreliable in the dark.
+a clear sky would be a direct line of sight to space which would be cold, and the mlx90614 pointed upward would read that cold radiation and return a very very low temperature. however if it was pointed at a cloud the temperature would be much higher, and when we compare this with the surrounding temperature taken by the other sensor it allows us to predict if clouds are blocking the sky or not, without using any internet forecast data or camera since those will be unreliable in the dark.
+
+## PCB 1 - Sensor Unit Schematic
+
+<img width="3332" height="2362" alt="SCH_sensor module_1-P1_2026-06-20" src="https://github.com/user-attachments/assets/f8010cfa-fd10-45ca-8487-feabae61a1f7" />
+
+## PCB 1 - Sensor Unit Board
+<img width="655" height="733" alt="image" src="https://github.com/user-attachments/assets/045f13c4-e086-455f-a1b3-71117ae86d4b" />
+
+
+## PCB 2 - Display Unit Schematic
+<img width="646" height="599" alt="image" src="https://github.com/user-attachments/assets/01e65c67-f360-4e9a-b883-7dea293ac82c" />
+
+
+## PCB 2 - Display Unit Board
+<img width="691" height="720" alt="image" src="https://github.com/user-attachments/assets/e26c5b05-7fa6-4bb3-b5a7-e48f6baba475" />
+
+
+## 3d models / case
+
+the `3d models/` folder has the printable case for the desk (indoors) unit. the round window is for the display. you have to slide the pcb into the slot as shown
+
+<p align="center">
+  <img width="420" alt="case front" src="https://github.com/user-attachments/assets/e6877bf0-b3b2-4584-9cf7-c06fdda23ed4" /><br>
+  <b>front</b>
+</p>
+
+<p align="center">
+  <img width="420" alt="case back" src="https://github.com/user-attachments/assets/e1edb2d8-aff9-4241-a063-ca5e59bba156" /><br>
+  <b>back</b>
+</p>
+
+<p align="center">
+  <img width="420" alt="case view" src="https://github.com/user-attachments/assets/0681920f-55f1-49fb-a836-754ea2740a98" />
+</p>
+
+the outdoors sensor unit still needs a proper weatherproof housing, thats on the v2 list, for now you can leave the board exposed or pop it in any vented box that still lets the sensors see the sky.
 
 ## the firmware
 
@@ -36,13 +76,13 @@ right now theres **no gps and no moon phase** in the code, its the bare minimum 
 
 ## assembly
 
-first thing, head to `PCB_Files/` and download both gerber zips (`ASTROPET_SENSOR_PCB.zip` and `ASTROPET_DISPLAY_PCB.zip`) and get them made at jlcpcb. once the boards arrive, populate them using the silkscreen markers as a guide, start with the smaller parts first, everything is hand solderable.
+first thing, head to `PCB_FILES/` and download both gerber zips (`ASTROPET_SENSOR_PCB.zip` and `ASTROPET_DISPLAY_PCB.zip`) and get them made at jlcpcb. once the boards arrive, populate them using the silkscreen markers as a guide, start with the smaller parts first, everything is hand solderable.
 
-then grab `sensor_unit.ino` and `display_unit.ino` from the `firmware/` folder and flash them using the firmware instructions above. after flashing, connect the round screen to the display unit. power both boards and the pet is ready, pop the sensor unit outside facing the sky and keep the display unit on your desk.
+then grab `sensor_unit.ino` and `display_unit.ino` from the `firmware/` folder and flash them using the firmware instructions above. after flashing, connect the round screen to the display unit, ensure it works. if it works, disconnect them, slide the pcb into the slot inside of the case as shown in the 3d model photos, then u can plug in the screen and join everything. no screws required, everything snaps into place. power both boards and the pet is ready, pop the sensor unit outside facing the sky and keep the display unit on your desk.
 
 ## BOM
 
-full bom with lcsc part numbers is in `BOM.xlsx`. order the pcbs from jlcpcb using the gerber files in `PCB_Files/`.
+full bom with lcsc part numbers is in `BOM.csv`. order the pcbs from jlcpcb using the gerber files in `PCB_FILES/`.
  
 | Qty | Description | Manufacturer | MPN | Supplier | Part No. | Unit (USD) | Total (USD) |
 |-----|-------------|--------------|-----|----------|----------|------------|-------------|
@@ -74,25 +114,3 @@ full bom with lcsc part numbers is in `BOM.xlsx`. order the pcbs from jlcpcb usi
 **Total: ~$40.50 USD**
 
 \* the neo-6m gps isnt used by the v1 firmware, its only on the board so gps + moon phase can be added later as a firmware update (see the firmware section). you can leave it unpopulated for now if you want.
-
-## PCB 1- Sensor Unit Schematic
-<img width="1254" height="890" alt="image" src="https://github.com/user-attachments/assets/387eb00c-4090-4941-8522-82c020f500f5" />
-
-## PCB 1- Sensor Unit Board
-<img width="699" height="778" alt="image" src="https://github.com/user-attachments/assets/da1e4bcc-55bd-47d4-9825-041cb42d2b69" />
-
-## PCB 2- Display Unit Schematic
-<img width="889" height="629" alt="image" src="https://github.com/user-attachments/assets/34339de9-19a9-4032-b9bc-2f7a38123eea" />
-
-## PCB 2 - Display Unit Board
-<img width="551" height="553" alt="image" src="https://github.com/user-attachments/assets/47162c53-ad4b-45b6-b6fa-8b214f50ab22" />
-
-## 3d models / case
-
-the `3d models/` folder has the printable case for the desk (indoors) unit. the round window is for the display.
-
-<img width="755" height="493" alt="image" src="https://github.com/user-attachments/assets/c85898d4-9b1f-404f-9d57-bd25225d3585" />
-
-
-
-the outdoors sensor unit still needs a proper weatherproof housing, thats on the v2 list, for now you can leave the board exposed or pop it in any vented box that still lets the sensors see the sky.
