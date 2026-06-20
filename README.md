@@ -1,4 +1,4 @@
-<img width="1410" height="2000" alt="Copy of ASTRO PET (1)" src="https://github.com/user-attachments/assets/fd420cd7-53b0-4618-81a4-5620f0effd8c" />
+<img width="1410" height="2000" alt="ZINE" src="https://github.com/user-attachments/assets/f9252e13-5984-4b83-a18c-5c1f005c9247" />
 
 # AstroPet
 
@@ -12,7 +12,7 @@ The pet's mood tells you whether it's worth going outside to shoot tonight. A ha
 
 Everytime i want to go outside and shoot theres always the laziness preventing me. im always thinking what if its too bright, what if theres too many clouds, is the humidity right, is it time to go shoot yet or do i wait more. by the time iv figured it out all the motivation to shoot has faded, or the time to shoot has. so i figured if i have a small device pet telling me exactly what to do and if its a good idea to shoot, without me ever leaving the comfort of my bed, its perfect. i wanted something that would work anywhere regardless of if i had wifi.
 
-right now im only doing the most basic things with the sensors, however overtime i plan to improve a lot on the design and firmware since this is just a v1 build of it. overtime i plan on adding more moods, maybe optional wifi modes that also pull planetary data and moon phase, and perhaps tell you what to shoot or an ideal setup to use.
+right now im only doing the most basic things with the sensors, however overtime i plan to improve a lot on the design and firmware since this is just a v1 build of it. overtime i plan on adding more moods, maybe optional wifi modes that also pull planetary data and moon phase, and perhaps tell you what to shoot or an ideal setup to use. iv already ordered both pcbs and all the parts for them, so the plan now is to build them, test them properly irl and keep developing them out from there.
 
 ## how does it work
 
@@ -20,6 +20,8 @@ the two boards talk to eachother wirelessly over the esp32s esp now protocol, a 
 
 **board one** the sensor unit, it sits outside reading the data, the sensors fire every 5 seconds and the data is then transmitted over to board 2.
 **board two** the display unit, it sits on your desk, receives the packets, runs three checks on the data and outputs a face to match all of it.
+
+both boards just run off usb c for now since this is a v1.
 
 ## Why the ir temperature finds clouds
 a clear sky would be a direct line of sight to space which would be cold, and the mlx90614 pointed upward would read that cold radiation and return a very very low temperature. however if it was pointed at a cloud the temperature would be much higher, and when we compare this with the surrounding temperature taken by the other sensor it allows us to predict if clouds are blocking the sky or not, without using any internet forecast data or camera since those will be unreliable in the dark.
@@ -40,25 +42,41 @@ a clear sky would be a direct line of sight to space which would be cold, and th
 <img width="691" height="720" alt="image" src="https://github.com/user-attachments/assets/e26c5b05-7fa6-4bb3-b5a7-e48f6baba475" />
 
 
-## 3d models / case
+## 3d models / cases
 
-the `3d models/` folder has the printable case for the desk (indoors) unit. the round window is for the display. you have to slide the pcb into the slot as shown
+the `3d models/` folder has the printable cases for both units, the desk display unit and the outdoor sensor unit. theres no screws anywhere in this whole build, both cases have clips on the inside that the pcb snaps into, and the lids clip shut over the top.
+
+### display unit (indoor)
+
+the round window is for the screen. you slide the pcb into the slot inside and it snaps into the clips, then the lid clips on over it.
 
 <p align="center">
-  <img width="420" alt="case front" src="https://github.com/user-attachments/assets/e6877bf0-b3b2-4584-9cf7-c06fdda23ed4" /><br>
+  <img width="420" alt="display case front" src="https://github.com/user-attachments/assets/e6877bf0-b3b2-4584-9cf7-c06fdda23ed4" /><br>
   <b>front</b>
 </p>
 
 <p align="center">
-  <img width="420" alt="case back" src="https://github.com/user-attachments/assets/e1edb2d8-aff9-4241-a063-ca5e59bba156" /><br>
+  <img width="420" alt="display case back" src="https://github.com/user-attachments/assets/e1edb2d8-aff9-4241-a063-ca5e59bba156" /><br>
   <b>back</b>
 </p>
 
 <p align="center">
-  <img width="420" alt="case view" src="https://github.com/user-attachments/assets/0681920f-55f1-49fb-a836-754ea2740a98" />
+  <img width="420" alt="display case view" src="https://github.com/user-attachments/assets/0681920f-55f1-49fb-a836-754ea2740a98" />
 </p>
 
-the outdoors sensor unit still needs a proper weatherproof housing, thats on the v2 list, for now you can leave the board exposed or pop it in any vented box that still lets the sensors see the sky.
+### sensor unit (outdoor)
+
+same setup, the pcb snaps into the clips inside and the lid clips closed over it. to actually put it outside you can just 3m double tape the bottom of the case onto a wall, a ledge or your roof, wherever it can see the open sky, so theres no drilling or screws needed for mounting it either.
+
+<p align="center">
+  <img width="420" alt="sensor case front" src="https://github.com/user-attachments/assets/f438f2a6-1610-454d-9ca3-273d06f90f81" /><br>
+  <b>front</b>
+</p>
+
+<p align="center">
+  <img width="420" alt="sensor case back" src="https://github.com/user-attachments/assets/45519c6c-8fb6-404f-aeda-4ec3b4577538" /><br>
+  <b>back</b>
+</p>
 
 ## the firmware
 
@@ -69,16 +87,26 @@ the sensor board just reads the three sensors and broadcasts them over esp now e
 right now theres **no gps and no moon phase** in the code, its the bare minimum to get the core thing working and keep it easy to flash. im adding gps + moon phase (and maybe an optional wifi mode) in a **v2** once iv built and tested the boards irl. the gps connector is already on the board so its just a firmware update later.
 
 ### flashing it
-- arduino ide with the **esp32 by Espressif** board package, pick **ESP32S3 Dev Module**
+to flash, open the sketch in arduino ide, install the **esp32 by Espressif** board package and pick **ESP32S3 Dev Module** as the board, then plug the board in over usb c, select its com port and hit upload. install the libraries for whichever board youre flashing first:
 - sensor board libraries: `Adafruit TSL2591`, `Adafruit MLX90614`, `Adafruit BME280`
 - display board library: `TFT_eSPI`
 - the round display needs `TFT_eSPI` set up for the **GC9A01** driver in its `User_Setup.h`, if the screen is black or garbled thats almost always why
 
 ## assembly
 
-first thing, head to `PCB_FILES/` and download both gerber zips (`ASTROPET_SENSOR_PCB.zip` and `ASTROPET_DISPLAY_PCB.zip`) and get them made at jlcpcb. once the boards arrive, populate them using the silkscreen markers as a guide, start with the smaller parts first, everything is hand solderable.
+first step is getting the boards made, head to `PCB_FILES/` and download both gerber zips (`ASTROPET_SENSOR_PCB.zip` and `ASTROPET_DISPLAY_PCB.zip`), get them made at jlcpcb, and order the parts from the BOM below.
 
-then grab `sensor_unit.ino` and `display_unit.ino` from the `firmware/` folder and flash them using the firmware instructions above. after flashing, connect the round screen to the display unit, ensure it works. if it works, disconnect them, slide the pcb into the slot inside of the case as shown in the 3d model photos, then u can plug in the screen and join everything. no screws required, everything snaps into place. power both boards and the pet is ready, pop the sensor unit outside facing the sky and keep the display unit on your desk.
+once the boards arrive, populate them by hand using the silkscreen markers as a guide. start with the smallest parts first like the resistors and caps, then move up to the bigger stuff like the esp32 modules and the connectors. everything on here is hand solderable so you dont need anything fancy, just a normal iron and a bit of flux.
+
+after both boards are soldered, flash the firmware onto them. grab `sensor_unit.ino` and `display_unit.ino` from the `firmware/` folder and flash each one to its own board using the steps in the firmware section above. power for both is just usb c, so plug each board in over usb c to flash it and to run it.
+
+then the cases, and remember theres no screws anywhere in this build.
+
+for the display unit, connect the round screen to the board first and power it over usb c to check it actually works. once it does, unplug it, slide the pcb into the slot inside the case so it snaps into the clips, plug the screen back in, then clip the lid shut. thats it.
+
+for the sensor unit its the same thing, the pcb snaps into the clips inside the case and the lid clips closed over it. to put it outside just 3m double tape the bottom of the case onto a wall, ledge or roof where it can see the sky.
+
+once both are closed up, power them over usb c, keep the display unit on your desk and stick the sensor unit outside facing up at the open sky, and the pet should start reacting to whats going on up there.
 
 ## BOM
 
